@@ -54,6 +54,9 @@
 
 
         <script>
+
+
+            
             const url ="https://raw.githubusercontent.com/saksham-accio/f2_contest_3/main/food.json"
 let promise =fetch(url)
 
@@ -106,7 +109,7 @@ function renderItems(data) {
     let pricecard = document.createElement("h4");
     pricecard.innerHTML=`Total bill is: ${price}`
     h.appendChild(pricecard);
-}
+
 
 
           
@@ -139,7 +142,7 @@ takeOrder()
 .then(payOrder)
 .then(thanks)
 
-
+}
 
 
 
