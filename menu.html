@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <aside>
+        <div class="logo"><img height="150px" src="./utils/Restaurant-Logo.png" alt=""></div>
+        <p class="rname">Food Circles</p>
+        <p class="slogen">Eat healthy, Be healthy</p>
+        <div class="links">Quick Links :</div>
+        <ol>
+            <li>Home</li>
+            <li>Your Orders</li>
+            <li>Wallet</li>
+            <li>Profile</li>
+            <li>Log out</li>
+            
+        </ol>
+        <hr>
+        <div class="links">More About us</div>
+        <ol>
+            <li>Our blog</li>
+            <li>Upcomming Dishes</li>
+            <li>Our Story</li>
+            <li>Social media Links</li>
+        </ol>
+        
+    </aside>
+    <main>
+        <nav>
+            <div class="searchbox"><img  src="./utils/search.png" alt=""><input type="search" placeholder="Search food"></div>
+            <div>
+                <button>Sign up</button>
+                <button>Log in</button>
+            </div>
+            <img height="40px" src="./utils/Restaurant-Logo.png" alt="">
+        </nav>
+
+
+        <h2>Given order from MENU</h2>
+        <section id="menu">
+            
+        </section>
+        <section id="pricecard">
+
+        </section>
+
+
+
+
+
+        <script>
+            const url ="https://raw.githubusercontent.com/saksham-accio/f2_contest_3/main/food.json"
+let promise =fetch(url)
+
+promise.then((response)=>{
+ return response.json()}
+
+)
+.then(data=>
+    renderItems(data))
+    .catch(err=>{
+        console.log(err.message);
+    })
+
+    
+function renderItems(data) {
+    let oredereditem=[];
+    let arr =[];
+   
+    for(let i=0;i<3;i++){
+      let d = Math.random()*10;
+      let e =Math.floor(d)
+      arr.push(e);
+    }
+
+
+    ordereddata =data.filter((x)=>arr.includes(x.id))
+    if (ordereddata.length<3) {
+        ordereddata[2] = data[3]
+    }
+
+    const itemBox = document.getElementById("menu")
+    let price=0;
+    ordereddata.forEach(item => {
+        
+        let card = document.createElement("div")
+        card.className="item"
+        card.innerHTML=`
+        <img src="${item.imgSrc}" alt="..">
+        <p>${item.name}</p>
+        <div class="btm">
+            <span class="price">$ ${item.price}/-</span>
+            <span class="add"> + </span>
+        </div>`
+        oredereditem.push(item.name);
+        itemBox.appendChild(card);
+        price+=item.price;
+    });
+    console.log("Given order was : "+oredereditem+" and total bill is $"+price+"/-");
+    let h= document.getElementById("pricecard")
+    let pricecard = document.createElement("h4");
+    pricecard.innerHTML=`Total bill is: ${price}`
+    h.appendChild(pricecard);
+}
+
+
+          
+
+
+console.log("Get menu was invoked..")
+    function takeOrder (){
+            return new Promise(( resolve,reject)=>{
+            setTimeout(()=>{console.log("TakeOrder was invoked so, order have taken");resolve()},2500)
+        })
+        }
+        function orderPrep(){
+            return new Promise((resolve,reject)=>{
+            setTimeout(()=>{ console.log("Orderprep invoked status of order is: "+" {order:true, paid:false}");resolve()},1500)
+        })
+        }
+        function payOrder (){
+            return new Promise((resolve,reject)=>{
+            setTimeout(()=>{console.log("PayOrder invoked current status of order is: "+"{order:true, paid:true}");resolve()},1000)
+            })
+        }
+        function thanks (){
+            return new Promise((resolve,reject)=>{
+            setTimeout(()=>{alert("thanks for coming...");resolve()},1500)
+            })
+        }
+
+takeOrder()
+.then(orderPrep)
+.then(payOrder)
+.then(thanks)
+
+
+
+
+
+        </script>
+</body>
+</html>

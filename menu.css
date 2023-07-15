@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    
+}
+body{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(21, 21, 21);
+    display: flex;
+}
+aside{
+    width: 350px;
+    padding: 20px;
+    height: 100vh;
+    color: aliceblue;
+    background-color: rgb(13, 13, 13);
+    /* position: absolute; */
+    overflow: hidden;
+}
+main{
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+
+}
+nav{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(36, 36, 36);
+}
+
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+.searchbox{
+    display: flex;
+    border: 1px solid rgba(138, 138, 138, 0.407);
+    background-color: rgb(20, 20, 20);
+    border-radius: 8px;
+
+}
+.searchbox input{
+    width: 35vw;
+    height: 35px;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    border-radius: 0px 8px 8px 0px;
+    outline: none;
+    color: aliceblue;
+    padding: 0px 20px;
+}
+.searchbox img{
+    padding: 5px;
+    height: 35px;
+    background-color: rgb(20, 20, 20);
+    border-radius: 8px 0px 0px 8px;
+}
+
+
+button{
+    width: 120px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(174, 39, 39);
+    font-weight: 600;
+    color: aliceblue;
+    margin-left: 30px;
+}
+button:hover{
+    background-color: rgb(172, 20, 20);
+}
+
+.rname{
+    text-align: center;
+    margin-top: 10px;
+    color: aliceblue;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.slogen{
+    text-align: center;
+    color: rgb(255, 191, 0);
+    margin-bottom: 20px;
+}
+.links{
+    color: brown;
+    font-weight: 600;
+    text-align: center;
+}
+ol{
+    padding: 5px 30px;
+    margin-bottom: 50px;
+}
+hr{
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+h2{
+    margin-left: 60px;
+    margin-top: 50px;
+    color: aliceblue;
+    height: 25px;
+}
+#menu{
+    color: aliceblue;
+    padding: 5px 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.item{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 300px;
+    background-color: rgb(43, 43, 43);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+   
+}
+.item img{
+    justify-content: center;
+    height: 200px;
+}
+.item p{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    width: 100px;
+    color: brown;
+    font-weight: 600;
+}
+.btm{
+    display: flex;
+    justify-content: space-between;
+}
+.add{
+    padding: 1px 4px;
+    transform: translateY(-7px);
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: rgb(86, 86, 86);
+}
+
+#pricecard{
+    margin:30px 100px;
+    color: aliceblue;
+}
